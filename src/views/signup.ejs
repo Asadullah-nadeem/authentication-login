@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+    <style>
+        .icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+        <h1 class="text-2xl font-bold mb-4">Signup</h1>
+        <form id="signupForm" method="POST" action="/api/signup">
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-medium text-gray-700">Username:</label>
+                <input type="text" id="username" name="username" required
+                    class="mt-1 p-2 border border-gray-300 rounded w-full" />
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="block text-sm font-medium text-gray-700">New Password (8 characters
+                    min):</label>
+                <input type="password" id="password" name="password" required
+                    class="mt-1 p-2 border border-gray-300 rounded w-full" />
+            </div>
+
+            <div class="mb-4">
+                <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required
+                    class="mt-1 p-2 border border-gray-300 rounded w-full" />
+            </div>
+
+         
+            <div class="mb-4">
+                <label for="recoveryPhrase" class="block text-sm font-medium text-gray-700">Secret Recovery Phrase:</label>
+                <textarea id="recoveryPhrase" name="recoveryPhrase" readonly class="mt-1 p-2 border border-gray-300 rounded w-full" rows="3"></textarea>
+                <button type="button" id="generatePhrase" class="mt-2 bg-gray-300 text-gray-700 p-2 rounded">Generate Recovery Phrase</button>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded">Sign Up</button>
+        </form>
+
+        <div id="message" class="mt-4 text-center"></div>
+
+        <div class="mt-4 text-center">
+            <button id="loginButton" class="bg-gray-200 text-gray-700 p-2 rounded">Already have an account?
+                Login</button>
+        </div>
+    </div>
+    <script src="./js/words.js"></script> 
+    <script src="./js/signup.js"></script> 
+
+</body>
+
+</html>
